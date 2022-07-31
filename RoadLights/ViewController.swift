@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         greenLightView.backgroundColor = UIColor.green.withAlphaComponent(0.5)
     }
     
-    @IBAction func startButtonPressed() {
+    @IBAction private func startButtonPressed() {
         startButton.setTitle("Next", for: .normal)
         
         if redLightView.backgroundColor == UIColor.red.withAlphaComponent(0.5) && orangeLightView.backgroundColor == UIColor.orange.withAlphaComponent(0.5) &&   greenLightView.backgroundColor == UIColor.green.withAlphaComponent(0.5){
