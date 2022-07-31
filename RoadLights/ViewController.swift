@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var redLightView: UIView!
     @IBOutlet var orangeLightView: UIView!
     @IBOutlet var greenLightView: UIView!
@@ -41,8 +41,6 @@ class ViewController: UIViewController {
             redLightView.backgroundColor = UIColor.red.withAlphaComponent(1)
         }
     }
-    
-    
     
 }
 
