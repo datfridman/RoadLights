@@ -31,7 +31,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func startButtonPressed() {
+        if startButton.currentTitle == "Start" {
         startButton.setTitle("Next", for: .normal)
+        }
         
         if redLightView.alpha == 1 {
             redLightView.alpha = 0.5
