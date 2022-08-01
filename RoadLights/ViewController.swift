@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum CurrentLight {
+    case red, yellow, green
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet var redLightView: UIView!
@@ -15,6 +19,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var startButton: UIButton!
     
+    private var currentLight = CurrentLight.red
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,18 +40,34 @@ class ViewController: UIViewController {
         startButton.setTitle("Next", for: .normal)
         }
         
-        if redLightView.alpha == 1 {
-            redLightView.alpha = 0.5
-            orangeLightView.alpha = 1
-        } else if orangeLightView.alpha == 1 {
-            orangeLightView.alpha = 0.5
-            greenLightView.alpha = 1
-        } else if greenLightView.alpha == 1 {
+        
+        switch currentLight {
+        case .red:
             greenLightView.alpha = 0.5
             redLightView.alpha = 1
-        } else {
-            redLightView.alpha = 1
+            currentLight = .yellow
+        case .yellow:
+            redLightView.alpha = 0.5
+            orangeLightView.alpha = 1
+            currentLight = .green
+        case .green:
+            orangeLightView.alpha = 0.5
+            greenLightView.alpha = 1
+            currentLight = .red
         }
+        
+//        if redLightView.alpha == 1 {
+//            redLightView.alpha = 0.5
+//            orangeLightView.alpha = 1
+//        } else if orangeLightView.alpha == 1 {
+//            orangeLightView.alpha = 0.5
+//            greenLightView.alpha = 1
+//        } else if greenLightView.alpha == 1 {
+//            greenLightView.alpha = 0.5
+//            redLightView.alpha = 1
+//        } else {
+//            redLightView.alpha = 1
+//        }
     }
     
 }
